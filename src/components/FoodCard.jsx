@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCurrency } from '../context/CurrencyContext';
 
 const FoodCard = ({
   number,
@@ -9,6 +10,8 @@ const FoodCard = ({
   dietary,
   featured = false
 }) => {
+  const { formatPrice } = useCurrency();
+
   return (
     <div className="group relative flex flex-col bg-[#1B1A17] border border-white/10 overflow-hidden transition-all duration-500 hover:border-[#B89B62]/40 hover:shadow-[0_15px_35px_rgba(0,0,0,0.5)]">
       {/* Image Container with Editorial Aspect Ratio */}
@@ -44,7 +47,7 @@ const FoodCard = ({
               {name}
             </h3>
             <span className="text-lg font-sans font-medium text-[#D2B77A] ml-4 whitespace-nowrap">
-              {price}
+              {formatPrice(price)}
             </span>
           </div>
 

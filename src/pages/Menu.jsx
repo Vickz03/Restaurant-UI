@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
-import SectionHeading from '../components/SectionHeading';
 import MenuItem from '../components/MenuItem';
 import Button from '../components/Button';
 import { menuCategories, menuItems } from '../data/menuData';
+import { Search, X } from 'lucide-react';
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredItems = activeCategory === 'all'
-    ? menuItems
-    : menuItems.filter(item => item.category === activeCategory);
+  const filteredItems = menuItems.filter((item) => {
+    const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
+    const query = searchQuery.toLowerCase().trim();
+    const matchesSearch =
+      !query ||
+      item.name.toLowerCase().includes(query) ||
+      item.description.toLowerCase().includes(query) ||
+      (item.dietary && item.dietary.toLowerCase().includes(query));
+
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className="w-full bg-[#0B0B0A] text-[#F5F1E8]">
@@ -26,7 +35,7 @@ const Menu = () => {
       <section className="py-20 md:py-28 container mx-auto px-6">
         
         {/* Category Navigation Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-16 border-b border-white/10 pb-6">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-8">
           {menuCategories.map((cat) => (
             <button
               key={cat.id}
@@ -42,11 +51,57 @@ const Menu = () => {
           ))}
         </div>
 
+        {/* Live Search Bar */}
+        <div className="max-w-md mx-auto mb-16 relative">
+          <div className="relative flex items-center border border-white/15 bg-[#151513] focus-within:border-[#B89B62] transition-colors">
+            <Search className="w-4 h-4 text-[#B89B62] ml-4 shrink-0" />
+            <input
+              type="text"
+              placeholder="Search dishes or ingredients (e.g. Truffle, Lamb, Scallops)..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-transparent text-[#F5F1E8] px-3 py-3 text-xs font-sans placeholder-[#A9A49A]/60 focus:outline-none"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="mr-3 text-[#A9A49A] hover:text-[#F5F1E8]"
+                aria-label="Clear search"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+          {searchQuery && (
+            <p className="text-[11px] font-sans text-[#B89B62] text-center mt-2 font-light">
+              Showing search results for "<span className="text-[#F5F1E8]">{searchQuery}</span>" ({filteredItems.length} found)
+            </p>
+          )}
+        </div>
+
         {/* Menu Listings */}
         <div className="max-w-5xl mx-auto space-y-4">
-          {filteredItems.map((item) => (
-            <MenuItem key={item.id} {...item} />
-          ))}
+          {filteredItems.length > 0 ? (
+            filteredItems.map((item) => (
+              <MenuItem key={item.id} {...item} />
+            ))
+          ) : (
+            <div className="py-16 text-center bg-[#1B1A17] border border-white/10 p-8 space-y-3">
+              <h4 className="text-xl font-serif text-[#F5F1E8]">NO MATCHING DISHES FOUND</h4>
+              <p className="text-xs text-[#A9A49A] font-sans font-light">
+                We couldn't find any dish matching "{searchQuery}". Please try another search term or reset category filters.
+              </p>
+              <button
+                onClick={() => {
+                  setSearchQuery('');
+                  setActiveCategory('all');
+                }}
+                className="mt-4 inline-block text-xs font-sans uppercase tracking-widest text-[#B89B62] underline hover:text-[#F5F1E8]"
+              >
+                RESET FILTERS
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Dietary & Wine Pairing Note */}

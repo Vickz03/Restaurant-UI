@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Button from './Button';
+import { useCurrency } from '../context/CurrencyContext';
 
 const navLinks = [
   { name: 'HOME', path: '/' },
@@ -14,6 +15,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const { currency, toggleCurrency } = useCurrency();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -87,8 +89,16 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Desktop Reserve Button */}
-        <div className="hidden lg:block">
+        {/* Desktop Reserve Button & Currency Toggle */}
+        <div className="hidden lg:flex items-center gap-4">
+          <button
+            onClick={toggleCurrency}
+            className="text-[11px] font-sans tracking-widest text-[#B89B62] border border-[#B89B62]/40 px-2.5 py-1.5 hover:bg-[#B89B62] hover:text-[#0B0B0A] transition-all uppercase rounded-none"
+            title="Toggle Currency (INR / USD)"
+          >
+            {currency === 'INR' ? '₹ INR' : '$ USD'}
+          </button>
+
           <Button to="/reservation" variant="primary" size="sm">
             RESERVE A TABLE
           </Button>
@@ -98,8 +108,17 @@ const Navbar = () => {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle navigation menu"
-          className="lg:hidden text-[#F5F1E8] hover:text-[#B89B62] transition-colors p-2 focus:outline-none"
+          className="lg:hidden text-[#F5F1E8] hover:text-[#B89B62] transition-colors p-2 focus:outline-none flex items-center gap-3"
         >
+          <span
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleCurrency();
+            }}
+            className="text-[10px] font-sans tracking-widest text-[#B89B62] border border-[#B89B62]/40 px-2 py-1"
+          >
+            {currency === 'INR' ? '₹' : '$'}
+          </span>
           {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </div>

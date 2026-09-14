@@ -5,6 +5,8 @@ import ReservationForm from '../components/ReservationForm';
 import ExperienceCard from '../components/ExperienceCard';
 import { experiences } from '../data/experienceData';
 
+import CourseSlider from '../components/CourseSlider';
+
 const Reservation = () => {
   return (
     <div className="w-full bg-[#0B0B0A] text-[#F5F1E8]">
@@ -17,8 +19,11 @@ const Reservation = () => {
       />
 
       {/* Main Reservation Section */}
-      <section className="py-20 md:py-28 container mx-auto px-6 max-w-5xl">
+      <section className="py-20 md:py-28 container mx-auto px-6 max-w-5xl space-y-16">
         <ReservationForm />
+        
+        {/* Interactive 8-Course Tasting Menu Slider */}
+        <CourseSlider />
       </section>
 
       {/* Private Experiences Breakdown */}

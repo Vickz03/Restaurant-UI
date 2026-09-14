@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCurrency } from '../context/CurrencyContext';
 
 const MenuItem = ({
   number,
@@ -8,6 +9,8 @@ const MenuItem = ({
   dietary,
   image
 }) => {
+  const { formatPrice } = useCurrency();
+
   return (
     <div className="group relative py-6 border-b border-white/10 transition-colors hover:border-[#B89B62]/40">
       <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
@@ -36,7 +39,7 @@ const MenuItem = ({
 
         {/* Price */}
         <div className="text-lg md:text-xl font-sans font-medium text-[#D2B77A] whitespace-nowrap self-start md:self-auto">
-          {price}
+          {formatPrice(price)}
         </div>
       </div>
 

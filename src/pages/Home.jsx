@@ -7,6 +7,7 @@ import FoodCard from '../components/FoodCard';
 import ExperienceCard from '../components/ExperienceCard';
 import { menuItems } from '../data/menuData';
 import { experiences } from '../data/experienceData';
+import PressQuotes from '../components/PressQuotes';
 
 const Home = () => {
   const signatureDishes = menuItems.filter(item => item.featured);
@@ -203,6 +204,8 @@ const Home = () => {
         </div>
       </section>
 
+      {/* CRITIC REVIEWS & PRESS CAROUSEL */}
+      <PressQuotes />
 
       {/* SECTION 5 — EXPERIENCE */}
       <section className="py-24 md:py-32 bg-[#151513] border-t border-white/10">

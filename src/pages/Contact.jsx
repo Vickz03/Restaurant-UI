@@ -37,7 +37,7 @@ const Contact = () => {
                   <MapPin className="w-5 h-5 text-[#B89B62] shrink-0 mt-0.5" />
                   <div>
                     <span className="block text-[#F5F1E8] font-medium">Address</span>
-                    <span>12 Cathedral Road, Gopalapuram, Chennai, Tamil Nadu 600086</span>
+                    <span>12 Race Course Road, Gopalapuram, Coimbatore, Tamil Nadu 641018</span>
                   </div>
                 </div>
 
@@ -99,8 +99,8 @@ const Contact = () => {
         <div className="container mx-auto px-6">
           <SectionHeading
             label="FINDING US"
-            title="IN THE HEART OF CHENNAI"
-            description="Located along Chennai's prime Cathedral Road, easily accessible from Nungambakkam and Mylapore."
+            title="IN THE HEART OF COIMBATORE"
+            description="Located along Coimbatore's prime Race Course Road, easily accessible from RS Puram and Avinashi Road."
             align="center"
             className="mb-12"
           />
@@ -109,7 +109,7 @@ const Contact = () => {
             {/* Styled Dark Map Graphic Placeholder */}
             <img
               src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1600&q=80"
-              alt="Élan Location Map Cathedral Road Chennai"
+              alt="Aaraya Location Map Race Course Road Coimbatore"
               className="w-full h-full object-cover filter grayscale contrast-125 brightness-75 group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0A] via-[#0B0B0A]/40 to-transparent" />
@@ -119,14 +119,14 @@ const Contact = () => {
                 <Compass className="w-6 h-6" />
               </div>
               <h4 className="text-2xl font-serif text-[#F5F1E8] font-normal mb-2">
-                12 CATHEDRAL ROAD, CHENNAI
+                12 RACE COURSE ROAD, COIMBATORE
               </h4>
               <p className="text-xs text-[#A9A49A] font-sans mb-6 max-w-md font-light">
                 Valet parking available at front entrance. Private chauffeur pickup arranged upon request.
               </p>
               
               <a
-                href="https://maps.google.com/?q=12+Cathedral+Road+Chennai+Tamil+Nadu"
+                href="https://maps.google.com/?q=12+Race+Course+Road+Coimbatore+Tamil+Nadu"
                 target="_blank"
                 rel="noopener noreferrer"
               >

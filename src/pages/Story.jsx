@@ -26,7 +26,7 @@ const Story = () => {
             />
 
             <p className="text-[#A9A49A] font-sans text-base md:text-lg font-light leading-relaxed">
-              AARAYA was born from a simple belief: exceptional food should create exceptional memories. Founded in 2018 along Chennai's historic Cathedral Road, the restaurant brings together traditional culinary craftsmanship with modern European techniques.
+              AARAYA was born from a simple belief: exceptional food should create exceptional memories. Founded in 2018 along Coimbatore's historic Race Course Road, the restaurant brings together traditional culinary craftsmanship with modern European techniques.
             </p>
 
             <p className="text-[#A9A49A] font-sans text-sm font-light leading-relaxed">
@@ -147,7 +147,7 @@ const Story = () => {
             "Every table has a story waiting to be told."
           </blockquote>
           <span className="text-xs font-sans tracking-[0.3em] uppercase text-[#B89B62]">
-            — AARAYA RESTAURANT, CHENNAI
+            — AARAYA RESTAURANT, COIMBATORE
           </span>
         </div>
       </section>

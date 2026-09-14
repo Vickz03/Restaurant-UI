@@ -22,7 +22,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-xs text-[#A9A49A] font-sans leading-relaxed max-w-sm font-light pt-2">
-              An unforgettable culinary journey crafted with passion, artistic precision, and seasonal excellence in the heart of Chennai.
+              An unforgettable culinary journey crafted with passion, artistic precision, and seasonal excellence in the heart of Coimbatore.
             </p>
             
             {/* Social Icons */}
@@ -93,7 +93,7 @@ const Footer = () => {
             <div className="space-y-4 text-xs font-sans text-[#A9A49A] font-light">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#B89B62] shrink-0 mt-0.5" />
-                <span>12 Cathedral Road, Chennai, Tamil Nadu 600086</span>
+                <span>12 Race Course Road, Coimbatore, Tamil Nadu 641018</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#B89B62] shrink-0" />
@@ -103,8 +103,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#B89B62] shrink-0" />
-                <a href="mailto:hello@elanrestaurant.com" className="hover:text-[#F5F1E8] transition-colors">
-                  hello@elanrestaurant.com
+                <a href="mailto:hello@aarayarestaurant.com" className="hover:text-[#F5F1E8] transition-colors">
+                  hello@aarayarestaurant.com
                 </a>
               </div>
             </div>
@@ -135,7 +135,7 @@ const Footer = () => {
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] font-sans text-[#A9A49A] font-light">
           <p>© 2026 AARAYA. All rights reserved.</p>
           <p className="mt-2 md:mt-0 tracking-widest text-[#B89B62]/80 uppercase">
-            CHENNNAI • TAMIL NADU
+            COIMBATORE • TAMIL NADU
           </p>
         </div>
       </div>

@@ -129,7 +129,7 @@ const Navbar = () => {
               RESERVE A TABLE
             </Button>
             <span className="text-[11px] font-sans tracking-widest text-[#A9A49A] uppercase">
-              Cathedral Road, Chennai
+              Race Course Road, Coimbatore
             </span>
           </div>
         </div>

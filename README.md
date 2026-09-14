@@ -8,7 +8,7 @@ A production-quality, luxury fine-dining restaurant web application built with *
 
 - **Restaurant Name**: AARAYA
 - **Tagline**: Artisanal Fine Dining & Culinary Art
-- **Location**: 12 Cathedral Road, Chennai, Tamil Nadu
+- **Location**: 12 Race Course Road, Coimbatore, Tamil Nadu
 - **Aesthetic**: Dark cinematic visual language, warm ivory typography, muted gold accents, and high-resolution culinary photography.
 
 ---

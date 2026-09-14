@@ -33,7 +33,7 @@ const Home = () => {
           <div className="flex items-center justify-center gap-3 mb-6 animate-fade-in">
             <span className="h-[1px] w-12 bg-[#B89B62]/60"></span>
             <span className="text-[#B89B62] text-xs font-medium tracking-[0.35em] uppercase font-sans">
-              EST. 2018 • CHENNAI
+              EST. 2018 • COIMBATORE
             </span>
             <span className="h-[1px] w-12 bg-[#B89B62]/60"></span>
           </div>

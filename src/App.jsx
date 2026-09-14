@@ -14,7 +14,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="flex flex-col min-h-screen bg-[#0B0B0A] text-[#F5F1E8] font-sans selection:bg-[#B89B62] selection:text-[#0B0B0A]">
         {/* Scroll listener & floating back-to-top button */}
         <ScrollToTop />
